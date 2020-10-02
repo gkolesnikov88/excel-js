@@ -37,6 +37,36 @@ class Dom {
     }
     return this;
   }
+
+  closest(selector) {
+    return new Dom(this.$el.closest(selector));
+  }
+
+  getCoordinates() {
+    return this.$el.getBoundingClientRect();
+  }
+
+  get data() {
+    return this.$el.dataset;
+  }
+
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector);
+  }
+
+  /**
+   * Set css styles to inner html element.
+   * @param {Object} styles
+   * Example {
+   *    width: '30px',
+   *    background: 'red',
+   *  };
+   */
+  css(styles) {
+    Object
+        .keys(styles)
+        .forEach(key => this.$el.style[key] = styles[key]);
+  }
 }
 
 export function $(selector) {
