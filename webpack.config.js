@@ -11,15 +11,8 @@ const isDev = !isProd;
 const filename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`;
 
 const jsLoaders = () => {
-  const loaders = [
-    {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: ['@babel/plugin-proposal-class-properties'],
-      },
-    },
-  ];
+  const loaders = ['babel-loader'];
+
   if (isDev) {
     loaders.push('eslint-loader');
   }
@@ -41,7 +34,7 @@ module.exports = {
       '@core': path.resolve(__dirname, 'src/core'),
     },
   },
-  devtool: isDev ? 'source-map': false,
+  devtool: isDev ? 'source-map' : false,
   devServer: {
     port: 3003,
     hot: isDev,
@@ -57,8 +50,10 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        {from: path.resolve(__dirname, 'src/favicon.ico'),
-          to: path.resolve(__dirname, 'dist')},
+        {
+          from: path.resolve(__dirname, 'src/favicon.ico'),
+          to: path.resolve(__dirname, 'dist')
+        },
       ],
     }),
     new MiniCssExtractPlugin({
