@@ -1,0 +1,24 @@
+{
+  "name": "excel-js",
+  "version": "1.0.0",
+  "description": "Pure JS Excel Clone Application",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gkolesnikov88/excel-js.git"
+  },
+  "keywords": [
+    "JS",
+    "javascript",
+    "ecxel"
+  ],
+  "author": "George Kolesnikov <gkolesnikov88@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gkolesnikov88/excel-js/issues"
+  },
+  "homepage": "https://github.com/gkolesnikov88/excel-js#readme"
+}
